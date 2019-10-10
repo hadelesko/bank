@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<div th:unless="${users} and ${users.size()}" th:text="${title}">No user registered yet :(</div>
+
+<div th:if="${users} and ${users.size()}">
+    <table class="table" >
+
+        <tr>
+            <th>Customers</th>
+        </tr>
+
+        <tr>
+            <th>Id</th>
+            <th>Last name</th>
+            <th>First name</th>
+            <th>Address</th>
+        </tr>
+
+        <tr th:each="user:${users}">
+            <td><a th:href="'user/id='+ ${user.id}" th:text="${user.id}"></a></td>
+            <td><a th:href="'user/name='+ ${user.lastName}" th:text="${user.lastName}"></a></td>
+            <td th:text="${user.firstName}"></td>
+            <td th:text="${user.address}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
