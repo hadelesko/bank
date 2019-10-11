@@ -3,10 +3,11 @@
 <head th:replace="fragments :: head"></head>
 
 <body class="container">
+<nav th:replace="fragments :: navigation_home"></nav>
 
 <div th:unless="${users} and ${users.size()}" th:text="${title}">No user registered yet :(</div>
 
-<div th:if="${users} and ${users.size()}">
+<!--<div th:if="${users} and ${users.size()}">-->
     <table class="table" >
 
         <tr>
@@ -27,6 +28,7 @@
             <td th:text="${user.address}"></td>
         </tr>
     </table>
-</div>
+<!--</div>-->
+<nav th:replace="fragments :: navigation_new"></nav>
 </body>
 </html>

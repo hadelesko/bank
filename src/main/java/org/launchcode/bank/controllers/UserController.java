@@ -15,7 +15,7 @@ public class UserController {
 
     @RequestMapping(value = "")
     public String index(Model model){
-        model.addAttribute("title", "Users");
+        model.addAttribute("title", "Bank of the community");
         model.addAttribute("users", userDao.findAll());
         return "user/index";
     }
